@@ -163,12 +163,12 @@
             font-size: 0.9rem; color: #777; text-align: center; position: absolute; bottom: 20px; width: 100%;
         }
         
-        /* Layout 5S sem setas */
+        /* Layout 5S */
         .s5-container {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: flex-start; /* Alinhamento ao topo para que todos os cards tenham a mesma base */
+            align-items: flex-start;
             gap: 20px;
             margin-top: 40px;
         }
@@ -284,21 +284,40 @@
             h2 { font-size: 1.8rem; }
             h3 { font-size: 1.3rem; }
             p { font-size: 0.9rem; }
-            .column-layout { flex-direction: column; gap: 20px; }
+            
+            .column-layout {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center; /* Centraliza o texto em mobile */
+            }
             .column-layout .text-area, .column-layout .visual-area { width: 100%; }
-            .s5-container { flex-direction: column; gap: 20px; }
-            .s5-card { width: 100%; height: auto; padding: 20px; }
+            .visual-area {
+                order: -1; /* Move a área visual para o topo */
+                margin-bottom: 20px;
+            }
+            
+            .s5-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .s5-card {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                padding: 20px;
+            }
             .s5-card h3 { font-size: 1.2rem; }
             .s5-card p { font-size: 0.8rem; }
             .s5-icon svg { width: 35px; height: 35px; }
-            .s5-arrow { display: none; }
+            
             .challenge-section { padding: 30px; }
             .challenge-section h2 { font-size: 1.8rem; }
             .challenge-section p { font-size: 1rem; }
             .list-section ul li { font-size: 1rem; padding: 12px 15px; }
             .einstein-data-card .number { font-size: 2.5rem; }
             .einstein-data-card .label { font-size: 1.1rem; }
-            .footer-logo { display: none !important; }
+            
+            .footer-logo, .fonte { display: none !important; }
             .bg-shape { display: none; }
         }
     </style>
